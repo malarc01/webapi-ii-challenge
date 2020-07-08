@@ -1,6 +1,7 @@
 const express = require('express');
 
-const Posts = require('./data/db')
+const postRouter = require('./posts/posts-router')
+
 
 const server = express();
 
@@ -13,7 +14,7 @@ server.get('/', (req, res) => {
   `);
 });
 
-
+server.use('/api/posts',postRouter);
 
 
 
